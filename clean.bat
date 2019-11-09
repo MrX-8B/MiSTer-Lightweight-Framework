@@ -11,7 +11,7 @@ rmdir /s /q greybox_tmp
 rmdir /s /q hc_output
 rmdir /s /q .qsys_edit
 rmdir /s /q hps_isw_handoff
-cd sys
+cd sys_lw
 for /d %%i in (*_sim) do rmdir /s /q "%%~nxi"
 cd ..
 for /d %%i in (*_sim) do rmdir /s /q "%%~nxi"
