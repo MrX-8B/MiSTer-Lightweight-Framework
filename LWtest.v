@@ -41,12 +41,14 @@ always @(posedge PCLK) begin
 	else if (W==40) begin W <= 0; O <= O-1;	 end
 	else W <= W+1;
 end
-wire [17:0] iRGB = {{2{O[0]}},4'h0,{2{O[2]}},4'h0,{2{O[1]}},4'h0};
+wire [5:0] R = {6{O[1]}};
+wire [5:0] G = {6{O[2]}};
+wire [5:0] B = {6{O[0]}};
 
 
 // HV Timing Generator & VGA output
 HVGEN hv(
-	.HPOS(HPOS),.VPOS(VPOS),.PCLK(PCLK),.iRGB(iRGB),
+	.HPOS(HPOS),.VPOS(VPOS),.PCLK(PCLK),.iRGB({B,G,R}),
 	.oRGB(COLOR),.HSYN(HSYNC),.VSYN(VSYNC)
 );
 
