@@ -1,3 +1,4 @@
+// Example of emulation module for Lightweight framework 
 // Copyright (c) 2019 MiSTer-X
 
 module EMU_LW
